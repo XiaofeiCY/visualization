@@ -57,7 +57,7 @@ export default {
             context.ellipse(250, 250, 100, 50, 0, 0, Math.PI * 2, true)
             context.fill()
         },
-        ev_getCanvas4() { // 五角星，这是百度来的
+        ev_getCanvas4() { // 五角星，这是百度来的,加了点修改
             const canvas = document.querySelector('.canvas4')
             const context = canvas.getContext("2d");
             context.save(); // 存储状态
