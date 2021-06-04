@@ -15,7 +15,7 @@
                         <span>图形基础篇 (4讲)</span>
                     </template>
                     <el-menu-item index="1-1">02 | 指令式绘图系统：如何用Canvas绘制层次关系图？</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
+                    <el-menu-item index="1-2">03 | 声明式图形系统：如何用SVG图形元素绘制可视化图表？</el-menu-item>
                     <el-menu-item index="1-3">选项3</el-menu-item>
                     <el-menu-item index="1-4">选项4</el-menu-item>
                 </el-submenu>
@@ -43,10 +43,12 @@
 
 <script>
 import graphTwo from './graph/graph-02'
+import graphThree from './graph/graph-03'
 
 export default {
     components: {
-        graphTwo
+        graphTwo,
+        graphThree
     },
     data() {
         return {
@@ -61,6 +63,13 @@ export default {
             console.log(key, keyPath);
         },
         ev_select(key, keyPath) {
+            const params = {
+                '1-1': 'graphTwo',
+                '1-2': 'graphThree',
+                '1-3': '',
+                '1-4': '',
+            }
+            this.currentIndex = params[key]
             console.log(key, keyPath);
         }
     }
