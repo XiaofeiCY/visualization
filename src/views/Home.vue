@@ -16,7 +16,7 @@
                     </template>
                     <el-menu-item index="1-1">02 | 指令式绘图系统：如何用Canvas绘制层次关系图？</el-menu-item>
                     <el-menu-item index="1-2">03 | 声明式图形系统：如何用SVG图形元素绘制可视化图表？</el-menu-item>
-                    <el-menu-item index="1-3">选项3</el-menu-item>
+                    <el-menu-item index="1-3">04 | GPU与渲染管线：如何用WebGL绘制最简单的几何图形？</el-menu-item>
                     <el-menu-item index="1-4">选项4</el-menu-item>
                 </el-submenu>
                 <el-menu-item index="2">
@@ -44,11 +44,13 @@
 <script>
 import graphTwo from './graph/graph-02'
 import graphThree from './graph/graph-03'
+import graphFour from './graph/graph-04'
 
 export default {
     components: {
         graphTwo,
-        graphThree
+        graphThree,
+        graphFour
     },
     data() {
         return {
@@ -66,7 +68,7 @@ export default {
             const params = {
                 '1-1': 'graphTwo',
                 '1-2': 'graphThree',
-                '1-3': '',
+                '1-3': 'graphFour',
                 '1-4': '',
             }
             this.currentIndex = params[key]
