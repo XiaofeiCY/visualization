@@ -17,12 +17,14 @@
                     <el-menu-item index="1-1">02 | 指令式绘图系统：如何用Canvas绘制层次关系图？</el-menu-item>
                     <el-menu-item index="1-2">03 | 声明式图形系统：如何用SVG图形元素绘制可视化图表？</el-menu-item>
                     <el-menu-item index="1-3">04 | GPU与渲染管线：如何用WebGL绘制最简单的几何图形？</el-menu-item>
-                    <el-menu-item index="1-4">选项4</el-menu-item>
                 </el-submenu>
-                <el-menu-item index="2">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">导航二</span>
-                </el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">
+                        <i class="el-icon-menu"></i>
+                        <span slot="title">数学篇</span>
+                    </template>
+                    <el-menu-item index="2-1">05 | 如何用向量和坐标系描述点和线段？</el-menu-item>
+                </el-submenu>
                 <el-menu-item index="3" disabled>
                     <i class="el-icon-document"></i>
                     <span slot="title">导航三</span>
@@ -45,12 +47,14 @@
 import graphTwo from './graph/graph-02'
 import graphThree from './graph/graph-03'
 import graphFour from './graph/graph-04'
+import graphFive from './graph/graph-05'
 
 export default {
     components: {
         graphTwo,
         graphThree,
-        graphFour
+        graphFour,
+        graphFive
     },
     data() {
         return {
@@ -69,7 +73,7 @@ export default {
                 '1-1': 'graphTwo',
                 '1-2': 'graphThree',
                 '1-3': 'graphFour',
-                '1-4': '',
+                '2-1': 'graphFive',
             }
             this.currentIndex = params[key]
             console.log(key, keyPath);
