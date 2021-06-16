@@ -1,11 +1,17 @@
 <template>
     <div class="graph-05">
-        <h1>如何用 Canvas+Roughjs 实现坐标系转换？</h1>
-        <canvas width="512" height="512" class="canvas1"></canvas>
-        <h1>移动坐标系后的一个新写法</h1>
-        <canvas width="512" height="512" class="canvas2"></canvas>
-        <h1>生成随机树🌲</h1>
-        <canvas width="512" height="512" class="canvas3"></canvas>
+        <div class="canvas-block">
+            <h1>如何用 Canvas+Roughjs 实现坐标系转换？</h1>
+            <canvas width="512" height="512" class="canvas1"></canvas>
+        </div>
+        <div class="canvas-block">
+            <h1>移动坐标系后的一个新写法</h1>
+            <canvas width="512" height="512" class="canvas2"></canvas>
+        </div>
+        <div class="canvas-block">
+            <h1>生成随机树🌲</h1>
+            <canvas width="512" height="512" class="canvas3"></canvas>
+        </div>
     </div>
 </template>
 
@@ -106,6 +112,10 @@ export default {
 
 <style lang="less" scoped>
     .graph-05 {
+        .canvas-block {
+            float: left;
+            margin-right: 10px;
+        }
         .canvas1, .canvas2, .canvas3, .canvas4 {
             width: 256px;
             height: 256px;

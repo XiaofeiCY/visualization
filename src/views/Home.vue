@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>{{currentName}}</el-header>
       <el-container>
         <el-aside>
             <el-menu
@@ -9,30 +9,13 @@
                 @open="ev_handleOpen"
                 @close="ev_handleClose"
                 @select='ev_select'>
-                <el-submenu index="1">
+                <el-submenu v-for="item in menuList" :key='item.blockIndex' :index="item.blockIndex">
                     <template slot="title">
-                        <i class="el-icon-location"></i>
-                        <span>图形基础篇 (4讲)</span>
+                        <i class="el-icon-menu">{{item.title}}</i>
+                        <span></span>
                     </template>
-                    <el-menu-item index="1-1">02 | 指令式绘图系统：如何用Canvas绘制层次关系图？</el-menu-item>
-                    <el-menu-item index="1-2">03 | 声明式图形系统：如何用SVG图形元素绘制可视化图表？</el-menu-item>
-                    <el-menu-item index="1-3">04 | GPU与渲染管线：如何用WebGL绘制最简单的几何图形？</el-menu-item>
+                    <el-menu-item v-for="it in item.list" :key='it.itemIndex' :index="it.itemIndex">{{it.name}}</el-menu-item>
                 </el-submenu>
-                <el-submenu index="2">
-                    <template slot="title">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">数学篇</span>
-                    </template>
-                    <el-menu-item index="2-1">05 | 如何用向量和坐标系描述点和线段？</el-menu-item>
-                </el-submenu>
-                <el-menu-item index="3" disabled>
-                    <i class="el-icon-document"></i>
-                    <span slot="title">导航三</span>
-                </el-menu-item>
-                <el-menu-item index="4">
-                    <i class="el-icon-setting"></i>
-                    <span slot="title">导航四</span>
-                </el-menu-item>
             </el-menu>
         </el-aside>
         <el-main>
@@ -48,17 +31,59 @@ import graphTwo from './graph/graph-02'
 import graphThree from './graph/graph-03'
 import graphFour from './graph/graph-04'
 import graphFive from './graph/graph-05'
+import graphSeven from './graph/graph-07'
 
 export default {
     components: {
         graphTwo,
         graphThree,
         graphFour,
-        graphFive
+        graphFive,
+        graphSeven
     },
     data() {
         return {
-            currentIndex: 'graphTwo'
+            currentIndex: 'graphTwo',
+            currentName: '02 | 指令式绘图系统：如何用Canvas绘制层次关系图？',
+            menuList: [
+                {
+                    blockIndex: '1',
+                    title: '图形基础篇 (4讲)',
+                    list: [
+                        {
+                            itemIndex: '1-1',
+                            key: 'graphTwo',
+                            name: '02 | 指令式绘图系统：如何用Canvas绘制层次关系图？'
+                        },
+                        {
+                            itemIndex: '1-2',
+                            key: 'graphThree',
+                            name: '03 | 声明式图形系统：如何用SVG图形元素绘制可视化图表？'
+                        },
+                        {
+                            itemIndex: '1-3',
+                            key: 'graphFour',
+                            name: '04 | GPU与渲染管线：如何用WebGL绘制最简单的几何图形？'
+                        }
+                    ]
+                },
+                {
+                    blockIndex: '2',
+                    title: '数学篇',
+                    list: [
+                        {
+                            itemIndex: '2-1',
+                            key: 'graphFive',
+                            name: '05 | 如何用向量和坐标系描述点和线段？'
+                        },
+                        {
+                            itemIndex: '2-2',
+                            key: 'graphSeven',
+                            name: '07 | 如何用向量和参数方程描述曲线？'
+                        }
+                    ]
+                }
+            ]
         }
     },
     methods: {
@@ -69,13 +94,16 @@ export default {
             console.log(key, keyPath);
         },
         ev_select(key, keyPath) {
-            const params = {
-                '1-1': 'graphTwo',
-                '1-2': 'graphThree',
-                '1-3': 'graphFour',
-                '2-1': 'graphFive',
-            }
-            this.currentIndex = params[key]
+            this.menuList.forEach(ele => {
+                if (keyPath.length > 1) {
+                    ele.list.forEach(it => {
+                        if (it.itemIndex == key) {
+                            this.currentIndex = it.key
+                            this.currentName = it.name
+                        }
+                    });
+                }
+            });
             console.log(key, keyPath);
         }
     }
@@ -103,9 +131,13 @@ export default {
     }
     /deep/.el-menu {
         background-color: unset;
+        width: 100%;
     }
     /deep/.el-submenu__title, .el-menu-item {
+        overflow: hidden;
         text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }
 </style>
