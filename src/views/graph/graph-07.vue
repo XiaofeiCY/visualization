@@ -93,7 +93,7 @@ export default {
             ctx.translate(0.5 * width, 0.5 * height);
             ctx.scale(1, -1);
 
-            this.fn_draw(ctx, this.fn_parabola(-100, 0, 15.5, -10, 10)); // 椭圆
+            this.fn_draw(ctx, this.fn_parabola(-100, 0, 15.5, -10, 10)); // 抛物线
         },
 
         ev_getCanvas5() {
@@ -197,7 +197,7 @@ export default {
 
         fn_drawAxis(ctx, w, h) {
             ctx.save();
-            ctx.strokeStyle = '#ccc';
+            ctx.strokeStyle = 'yellow';
             ctx.beginPath();
             ctx.moveTo(-w, 0);
             ctx.lineTo(w, 0);
@@ -286,7 +286,7 @@ export default {
             float: left;
 
         }
-        .canvas1, .canvas2, .canvas3, .canvas4 {
+        .canvas1, .canvas2, .canvas3, .canvas4, .canvas5, .canvas6, .canvas7 {
             width: 256px;
             height: 256px;
             background-color: thistle;
