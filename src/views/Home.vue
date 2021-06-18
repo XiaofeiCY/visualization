@@ -32,6 +32,7 @@ import graphThree from './graph/graph-03'
 import graphFour from './graph/graph-04'
 import graphFive from './graph/graph-05'
 import graphSeven from './graph/graph-07'
+import graphEight from './graph/graph-08'
 
 export default {
     components: {
@@ -39,7 +40,8 @@ export default {
         graphThree,
         graphFour,
         graphFive,
-        graphSeven
+        graphSeven,
+        graphEight
     },
     data() {
         return {
@@ -80,6 +82,11 @@ export default {
                             itemIndex: '2-2',
                             key: 'graphSeven',
                             name: '07 | 如何用向量和参数方程描述曲线？'
+                        },
+                        {
+                            itemIndex: '2-3',
+                            key: 'graphEight',
+                            name: '08 | 如何利用三角剖分和向量操作描述并处理多边形？'
                         }
                     ]
                 }
