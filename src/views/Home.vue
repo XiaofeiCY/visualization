@@ -33,6 +33,7 @@ import graphFour from './graph/graph-04'
 import graphFive from './graph/graph-05'
 import graphSeven from './graph/graph-07'
 import graphEight from './graph/graph-08'
+import graphNine from './graph/graph-09'
 
 export default {
     components: {
@@ -41,7 +42,8 @@ export default {
         graphFour,
         graphFive,
         graphSeven,
-        graphEight
+        graphEight,
+        graphNine
     },
     data() {
         return {
@@ -87,7 +89,13 @@ export default {
                             itemIndex: '2-3',
                             key: 'graphEight',
                             name: '08 | 如何利用三角剖分和向量操作描述并处理多边形？'
+                        },
+                        {
+                            itemIndex: '2-4',
+                            key: 'graphNine',
+                            name: '09 | 如何用仿射变换对几何图形进行坐标变换？'
                         }
+
                     ]
                 }
             ]
