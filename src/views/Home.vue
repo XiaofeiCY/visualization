@@ -35,6 +35,7 @@ import graphSeven from './graph/graph-07'
 import graphEight from './graph/graph-08'
 import graphNine from './graph/graph-09'
 import graphTen from './graph/graph-10'
+import graphEleven from './graph/graph-11'
 
 export default {
     components: {
@@ -45,7 +46,8 @@ export default {
         graphSeven,
         graphEight,
         graphNine,
-        graphTen
+        graphTen,
+        graphEleven
     },
     data() {
         return {
@@ -107,6 +109,11 @@ export default {
                             itemIndex: '3-1',
                             key: 'graphTen',
                             name: '10 | 图形系统如何表示颜色？'
+                        },
+                        {
+                            itemIndex: '3-2',
+                            key: 'graphEleven',
+                            name: '11｜图案生成：如何生成重复图案、分形图案以及随机效果？'
                         }
                     ]
                 }
