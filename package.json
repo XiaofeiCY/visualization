@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "cubehelix": "^1.0.4",
+    "d3-color": "^3.0.1",
     "earcut": "^2.2.2",
     "element-ui": "^2.15.2",
     "register-service-worker": "^1.7.1",
     "roughjs": "^4.4.1",
+    "vec3": "^0.1.7",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"

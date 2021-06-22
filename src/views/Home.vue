@@ -34,6 +34,7 @@ import graphFive from './graph/graph-05'
 import graphSeven from './graph/graph-07'
 import graphEight from './graph/graph-08'
 import graphNine from './graph/graph-09'
+import graphTen from './graph/graph-10'
 
 export default {
     components: {
@@ -43,7 +44,8 @@ export default {
         graphFive,
         graphSeven,
         graphEight,
-        graphNine
+        graphNine,
+        graphTen
     },
     data() {
         return {
@@ -95,7 +97,17 @@ export default {
                             key: 'graphNine',
                             name: '09 | 如何用仿射变换对几何图形进行坐标变换？'
                         }
-
+                    ]
+                },
+                {
+                    blockIndex: '3',
+                    title: '视觉基础篇',
+                    list: [
+                        {
+                            itemIndex: '3-1',
+                            key: 'graphTen',
+                            name: '10 | 图形系统如何表示颜色？'
+                        }
                     ]
                 }
             ]
